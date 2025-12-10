@@ -10,7 +10,12 @@ vector<vector<string>> groupAnagrams(vector<string>& strs) {
     for (string s : strs) {
         string key = s;
         sort(key.begin(), key.end()); // Sort the characters to form a key
-        mp[key].push_back(s);         // Group anagrams by the sorted key
+        if(mp.find(key)!=mp.end()){
+            mp[key].push_back(s);
+        }    
+        else{
+            mp[key]={s};
+        }   // Group anagrams by the sorted key
     }
 
     vector<vector<string>> result;
