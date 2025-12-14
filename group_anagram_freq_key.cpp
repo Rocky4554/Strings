@@ -30,7 +30,7 @@ vector<vector<string>> groupAnagrams(vector<string>& strs) {
 
     // converting map → output vector
     vector<vector<string>> ans;
-    for (auto &p : mp) {
+    for (auto &it : mp) {
         ans.push_back(p.second);
     }
 
